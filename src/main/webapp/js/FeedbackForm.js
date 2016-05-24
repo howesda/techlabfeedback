@@ -57,6 +57,7 @@
 	function showResults() {
 		$('.votingButtons').hide();
 		$('.results').show();
+		renderChart();
 		setTimeout(function() {
 			$('.results').hide();
 			$('.votingFaces').show();
