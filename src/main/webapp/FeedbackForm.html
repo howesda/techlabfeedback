@@ -3,8 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Feedback</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/script.css">
+    <script src="js/jquery/jquery-2.1.4.min.js"></script>
+	<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="js/FeedbackForm.js"></script>
+
 </head>
 <body>
-hello
+	<div class="votingFaces">
+		<h1>How was the Tech Talk?</h1>
+		<img class="face" onclick="happy()" src="img/happy.png">
+		<img class="face" onclick="indifferent()" src="img/indifferent.png">
+		<img class="face" onclick="sad()" src="img/sad.png">
+	</div>
+	
+	<div class="votingButtons">
+		<h2>Has your understanding of TechLab increased?</h2>
+		<center><img onclick="yes()" src="img/yes.png">
+		<img onclick="no()" src="img/no.png"></center>
+	</div>
+	
+	
+	<div class="results">
+		<h1>Thank you for voting</h1>
+		<p>Happy : <b class="happy"> </b> Indifferent : <b class="indifferent"> </b> 
+		Unhappy : <b class="sad"> </b></p>
+		<div class="results" id="chartContainer"></div>
+	</div>
+	
 </body>
 </html>
