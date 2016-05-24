@@ -12,6 +12,7 @@
 </head>
 <body>
 	<div class="votingFaces">
+		<button onclick="results()">Results</button>
 		<h1>How was the Tech Talk?</h1>
 		<img class="face" onclick="happy()" src="img/happy.png">
 		<img class="face" onclick="indifferent()" src="img/indifferent.png">
@@ -26,10 +27,9 @@
 	
 	
 	<div class="results">
-		<h1>Thank you for voting</h1>
-		<p>Happy : <b class="happy"> </b> Indifferent : <b class="indifferent"> </b> 
-		Unhappy : <b class="sad"> </b></p>
-		<div class="results" id="chartContainer"></div>
+		<h1 id="thanks">Thank you for voting</h1>
+		<div id="chartContainer"></div>
+		<div id="chartContainerYN"></div>
 	</div>
 	
 </body>

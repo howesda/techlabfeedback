@@ -1,8 +1,6 @@
-
-
 .face {
-	height: 500px;
-	width: 500px;
+	height: 315px;
+	width: 315px;
 }
 
 h1, h2 {
@@ -12,8 +10,15 @@ h1, h2 {
 	font-size: 50px;
 }
 
-#chartContainer {
+#chartContainer, #chartContainerYN {
 	height: 300px; 
 	width: 100%;
-	
+	display: inline-Block;
+}
+
+button {
+	border-radius: 12px;
+	background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
 }

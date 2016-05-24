@@ -1,4 +1,4 @@
-	var happyCount=0, indifferentCount=0, sadCount=0;
+	var happyCount=0, indifferentCount=0, sadCount=0, yesCount=0, noCount=0;
 
 	$(function(){
 		update();
@@ -11,10 +11,11 @@
 			theme: "theme2",
 			colorSet: "colorSet3",
 			title:{
-				text: "Tech Talk Feedback Results"              
+				text: "Feedback"               
 			},
 			data: [              
 			{
+				 indexLabel: "{label} : {y}",
 				type: "column",
 				dataPoints: [
 					{ label: "Happy",  y: happyCount  },
@@ -25,29 +26,58 @@
 			]
 		});
 		chart.render();
+		
+		var chart = new CanvasJS.Chart("chartContainerYN", {
+
+			title:{
+				text:"Increased TechLab Understanding?"				
+
+			},
+                        animationEnabled: true,
+
+			data: [
+			{     
+				indexLabel: "{label} : {y}",
+				type: "bar",
+                name: "companies",
+				axisYType: "secondary",
+				color: "#014D65",				
+				dataPoints: [
+				
+				{y: yesCount, label: "Yes"  },
+				{y: noCount, label: "No"  }
+				]
+			}
+			
+			]
+		});
+
+		chart.render();
+
 	}
 
 	function happy() {
 		happyCount++;
 		changeView()
-		update();
 	};
 	function indifferent() {
 		indifferentCount++;
 		changeView()
-		update();
 	};
 	function sad() {
 		sadCount++;
 		changeView()
-		update();
 	};
 	
 	function yes(){
+		yesCount++;
 		showResults();
+		update();
 	}
 	function no() {
+		noCount++;
 		showResults();
+		update();
 	}
 	
 	function changeView() {
@@ -61,12 +91,20 @@
 		setTimeout(function() {
 			$('.results').hide();
 			$('.votingFaces').show();
-	    }, 5000);
+	    }, 4000);
+	}
+	function results() {
+		$('.votingFaces').hide();
+		$('.results').show();
+		document.getElementById('thanks').innerHTML = "TechTalk Feedback Results";;
+		renderChart();
 	}
 	
 	function update() {
 		$('.happy').html(happyCount);
 		$('.indifferent').html(indifferentCount);
 		$('.sad').html(sadCount);
+		$('.yes').html(yesCount);
+		$('.no').html(noCount);
 		renderChart();
 	};
