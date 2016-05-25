@@ -26,7 +26,7 @@
                                     <artifactId>techtalkfeedback</artifactId>
                                     <version>1.0-SNAPSHOT</version>
                                     <type>war</type>
-                                    <outputDirectory>docker</outputDirectory>
+                                    <outputDirectory>docker_build</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
